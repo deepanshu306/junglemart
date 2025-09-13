@@ -1,9 +1,9 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once 'includes/db.php';
 
-// fetch categories (limit)
-$cats = $pdo->query("SELECT id, name FROM categories WHERE 1 ORDER BY name LIMIT 8")->fetchAll();
+// fetch main categories only
+$cats = $pdo->query("SELECT id, name FROM categories WHERE parent_id IS NULL ORDER BY name")->fetchAll();
 
 // fetch featured
 $featured = $pdo->query("
@@ -46,33 +46,19 @@ function first_image($jsonImages) {
 </head>
 <body>
 
-<?php include 'navbar.php'; ?>
+<?php include 'partials/navbar.php'; ?>
 
 <!-- Hero -->
-<section class="hero-advanced">
-  <div class="hero-bg-layer"></div>
-  <div class="hero-content container">
+<section class="hero-advanced" style="position: relative; overflow: hidden; min-height: 700px; margin-top: 0;">
+  <video autoplay muted loop playsinline preload="metadata" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; object-fit: fill;">
+    <source src="images%20and%20logo/set.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="hero-content container" style="position:relative; z-index:1; font-family: 'Poppins', sans-serif;">
     <div class="hero-left" data-aos="fade-right">
-      <h1>Source products. Build a quotation. Connect with suppliers.</h1>
-      <p class="lead">Request quotations and receive price ranges and MOQs from verified suppliers.</p>
-
-      <form class="hero-search" action="search.php" method="GET" data-aos="zoom-in" data-aos-delay="150">
-        <input name="q" type="search" placeholder="Search products, categories, suppliers..." autocomplete="off">
-        <button class="btn primary">Search</button>
-      </form>
-
-      <div class="hero-trust" data-aos="fade-up" data-aos-delay="250">
-        <div class="trust-pill"><strong>Verified Suppliers</strong></div>
-        <div class="trust-pill"><strong>Quote in 24-72h</strong></div>
-        <div class="trust-pill"><strong>Secure Communication</strong></div>
-      </div>
-    </div>
-
-    <div class="hero-right" aria-hidden="true">
-<img src="images and logo/DSC_0413.JPG" alt="Hero Illustration" class="hero-illustration">
-      <div class="floating-leaf leaf-1"></div>
-      <div class="floating-leaf leaf-2"></div>
-      <div class="floating-leaf leaf-3"></div>
+      <h1 style="font-family: 'Poppins', sans-serif;">Landscaping starts with our supplies</h1>
+      <p class="lead" style="font-family: 'Poppins', sans-serif;">Get started with quality products today.</p>
+      <a href="/pages/categories.php" class="btn primary hero-cta-btn">Shop Now</a>
     </div>
   </div>
 </section>
@@ -83,13 +69,19 @@ function first_image($jsonImages) {
     <h2>Categories</h2>
     <p class="muted">Browse our wide range of product categories</p>
   </div>
-  <div class="cat-grid">
-    <?php foreach($cats as $c): ?>
-      <a href="categories.php?id=<?php echo $c['id']; ?>" class="cat-card">
-        <div class="cat-svg">📦</div>
-        <div class="cat-name"><?php echo htmlspecialchars($c['name']); ?></div>
-      </a>
-    <?php endforeach; ?>
+  <div class="swiper categories-swiper">
+    <div class="swiper-wrapper">
+      <?php foreach($cats as $c): ?>
+        <div class="swiper-slide">
+          <a href="/pages/categories.php?id=<?php echo $c['id']; ?>" class="cat-card" style="display: block; background: #ffffff; padding: 25px 20px; text-align: center; border-radius: 20px; box-shadow: 0 4px 12px rgba(46, 125, 50, 0.08); text-decoration: none; color: #424242; transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); border: 1px solid rgba(46, 125, 50, 0.1);">
+            <div class="cat-svg" style="font-size: 2.5rem; margin-bottom: 15px; display: block;">📦</div>
+            <div class="cat-name" style="font-weight: 600; font-size: 1rem;"><?php echo htmlspecialchars($c['name']); ?></div>
+          </a>
+        </div>
+      <?php endforeach; ?>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
   </div>
 </section>
 
@@ -105,14 +97,20 @@ function first_image($jsonImages) {
       <?php foreach($featured as $p): $img = first_image($p['images']); ?>
         <div class="swiper-slide">
           <div class="card product-card hover-3d">
-            <img src="<?php echo $img; ?>" alt="<?php echo htmlspecialchars($p['name']); ?>">
+            <img 
+              src="<?php echo $img; ?>" 
+              srcset="<?php echo $img; ?> 1x, <?php echo str_replace('.jpg', '@2x.jpg', $img); ?> 2x" 
+              alt="<?php echo htmlspecialchars($p['name']); ?>" 
+              loading="lazy"
+              decoding="async"
+            >
             <div class="card-body">
               <h3><?php echo htmlspecialchars($p['name']); ?></h3>
               <p class="price">Price Range: ₹<?php echo number_format($p['price'],2); ?><?php if(!empty($p['wholesale_price'])) echo " - ₹".number_format($p['wholesale_price'],2); ?></p>
               <p class="moq">MOQ: <?php echo (int)$p['min_order_quantity']; ?></p>
               <div class="card-actions">
                 <button class="btn add-to-cart" data-id="<?php echo $p['id']; ?>" data-title="<?php echo htmlspecialchars($p['name']); ?>" data-price="<?php echo $p['price']; ?>" data-wholesale="<?php echo $p['wholesale_price']; ?>" data-moq="<?php echo $p['min_order_quantity']; ?>">Add to Cart</button>
-                <a class="btn ghost" href="product.php?id=<?php echo $p['id']; ?>">View</a>
+                <a class="btn ghost" href="pages/product.php?id=<?php echo $p['id']; ?>">View</a>
               </div>
             </div>
           </div>
@@ -132,13 +130,13 @@ function first_image($jsonImages) {
   <div class="grid-reco">
     <?php foreach($recommended as $r): $img = first_image($r['images']); ?>
       <div class="card product-card small hover-3d" data-aos="fade-up">
-        <img src="<?php echo $img; ?>" alt="<?php echo htmlspecialchars($r['name']); ?>">
+        <img src="<?php echo $img; ?>" alt="<?php echo htmlspecialchars($r['name']); ?>" loading="lazy">
         <div class="card-body">
           <h4><?php echo htmlspecialchars($r['name']); ?></h4>
           <p class="price">₹<?php echo number_format($r['price'],2); ?> <small>MOQ: <?php echo (int)$r['min_order_quantity']; ?></small></p>
           <div class="card-actions">
             <button class="btn add-to-cart" data-id="<?php echo $r['id']; ?>" data-title="<?php echo htmlspecialchars($r['name']); ?>" data-price="<?php echo $r['price']; ?>" data-wholesale="<?php echo $r['wholesale_price']; ?>" data-moq="<?php echo $r['min_order_quantity']; ?>">Add</button>
-            <a class="btn ghost" href="product.php?id=<?php echo $r['id']; ?>">View</a>
+            <a class="btn ghost" href="pages/product.php?id=<?php echo $r['id']; ?>">View</a>
           </div>
         </div>
       </div>
@@ -148,20 +146,28 @@ function first_image($jsonImages) {
 
 <!-- Trust -->
 <section class="container trust-section" data-aos="fade-up">
+  <div class="section-head">
+    <h2>Why Choose Jungle Mart?</h2>
+    <p class="muted">Trusted by thousands of buyers and suppliers</p>
+  </div>
   <div class="trust-grid">
     <div class="trust-item">
+      <div class="trust-icon">🛡️</div>
       <h4>Verified Suppliers</h4>
       <p class="muted">Supplier vetting & profiles</p>
     </div>
     <div class="trust-item">
+      <div class="trust-icon">💰</div>
       <h4>Flexible Price Ranges</h4>
       <p class="muted">Estimate ranges shown on product cards</p>
     </div>
     <div class="trust-item">
+      <div class="trust-icon">📱</div>
       <h4>Quotation Requests</h4>
-<p class="muted" style="font-size: 1rem; line-height: 1.6;">Send cart via WhatsApp or Email</p>
+      <p class="muted" style="font-size: 1rem; line-height: 1.6;">Send cart via WhatsApp or Email</p>
     </div>
     <div class="trust-item">
+      <div class="trust-icon">🔒</div>
       <h4>Secure Communication</h4>
       <p class="muted">We protect buyer & supplier details</p>
     </div>
@@ -174,10 +180,10 @@ function first_image($jsonImages) {
     <div>
       <h2>Ready to Request a Quotation?</h2>
       <p class="muted">Collect products into your quotation cart and send your request via WhatsApp or Email.</p>
-      <a href="cart.php" class="btn primary lg">Open Quotation Cart</a>
+      <a href="pages/cart.php" class="btn primary lg">Open Quotation Cart</a>
     </div>
     <div aria-hidden="true">
-<img src="images and logo/WhatsApp Image 2025-08-19 at 11.24.28_0e8d8639.jpg" alt="Request Quotation" class="cta-graphic">
+<img src="images%20and%20logo/WhatsApp Image 2025-08-19 at 11.24.28_0e8d8639.jpg" alt="Request Quotation" class="cta-graphic">
     </div>
   </div>
 </section>
@@ -193,21 +199,21 @@ function first_image($jsonImages) {
       <!-- Flash sale products will be dynamically loaded here -->
       <div class="flash-product-card">
         <div class="sale-badge">30% OFF</div>
-        <img src="images and logo/DSC_0413.JPG" alt="Flash Sale Product">
+        <img src="/images%20and%20logo/DSC_0413.JPG" alt="Flash Sale Product" loading="lazy">
         <h3>Premium Plant Pots</h3>
         <p class="flash-price">₹1,499 <span class="original-price">₹2,499</span></p>
         <button class="btn primary">Add to Cart</button>
       </div>
       <div class="flash-product-card">
         <div class="sale-badge">25% OFF</div>
-        <img src="images and logo/DSC_0413.JPG" alt="Flash Sale Product">
+        <img src="/images%20and%20logo/DSC_0413.JPG" alt="Flash Sale Product" loading="lazy">
         <h3>Gardening Tools Set</h3>
         <p class="flash-price">₹899 <span class="original-price">₹1,199</span></p>
         <button class="btn primary">Add to Cart</button>
       </div>
       <div class="flash-product-card">
         <div class="sale-badge">40% OFF</div>
-        <img src="images and logo/DSC_0413.JPG" alt="Flash Sale Product">
+        <img src="/images%20and%20logo/DSC_0413.JPG" alt="Flash Sale Product" loading="lazy">
         <h3>Organic Fertilizers</h3>
         <p class="flash-price">₹599 <span class="original-price">₹999</span></p>
         <button class="btn primary">Add to Cart</button>
@@ -258,7 +264,7 @@ function first_image($jsonImages) {
     <p class="section-subtitle">Expert advice for plant lovers</p>
     <div class="blog-grid">
       <article class="blog-card">
-        <img src="images and logo/DSC_0413.JPG" alt="Plant Care Tips">
+        <img src="/images%20and%20logo/DSC_0413.JPG" alt="Plant Care Tips">
         <div class="blog-content">
           <h3>5 Essential Tips for Indoor Plant Care</h3>
           <p>Learn how to keep your indoor plants thriving with these simple tips...</p>
@@ -266,7 +272,7 @@ function first_image($jsonImages) {
         </div>
       </article>
       <article class="blog-card">
-        <img src="images and logo/DSC_0413.JPG" alt="Seasonal Planting">
+        <img src="/images%20and%20logo/DSC_0413.JPG" alt="Seasonal Planting">
         <div class="blog-content">
           <h3>Best Plants for Monsoon Season</h3>
           <p>Discover which plants thrive during the rainy season and how to care for them...</p>
@@ -274,7 +280,7 @@ function first_image($jsonImages) {
         </div>
       </article>
       <article class="blog-card">
-        <img src="images and logo/DSC_0413.JPG" alt="Sustainable Gardening">
+        <img src="/images%20and%20logo/DSC_0413.JPG" alt="Sustainable Gardening">
         <div class="blog-content">
           <h3>Sustainable Gardening Practices</h3>
           <p>Eco-friendly tips for maintaining a beautiful garden while protecting the environment...</p>
@@ -285,7 +291,7 @@ function first_image($jsonImages) {
   </div>
 </section>
 
-<?php include 'footer.php'; ?>
+<?php include 'partials/footer.php'; ?>
 
 <!-- JS libs -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -301,8 +307,8 @@ function first_image($jsonImages) {
 document.addEventListener('DOMContentLoaded', function() {
   AOS.init({ once: true, duration: 800 });
 
-  // init swiper
-  const swiper = new Swiper('.featured-swiper', {
+  // init swiper for featured products
+  const featuredSwiper = new Swiper('.featured-swiper', {
     slidesPerView: 3,
     spaceBetween: 20,
     navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
@@ -310,6 +316,18 @@ document.addEventListener('DOMContentLoaded', function() {
       320: { slidesPerView: 1 },
       640: { slidesPerView: 2 },
       1000: { slidesPerView: 3 }
+    }
+  });
+
+  // init swiper for categories
+  const categoriesSwiper = new Swiper('.categories-swiper', {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    breakpoints: {
+      320: { slidesPerView: 1 },
+      640: { slidesPerView: 2 },
+      1000: { slidesPerView: 4 }
     }
   });
 

@@ -1,3 +1,4 @@
 {
-    "CodeGPT.apiKey": "OpenAI"
+  "files.autoSave": "onWindowChange",
+  "editor.formatOnSave": true
 }

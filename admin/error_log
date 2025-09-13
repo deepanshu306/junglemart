@@ -1,0 +1,304 @@
+[08-Sep-2025 08:07:52 UTC] Admin login attempt for email: admin@junglemart.in
+[08-Sep-2025 08:07:52 UTC] Admin login success for user ID: 3
+[08-Sep-2025 11:04:24 UTC] Admin login attempt for email: admin@junglemart.in
+[08-Sep-2025 11:04:24 UTC] Admin login success for user ID: 3
+[08-Sep-2025 11:17:29 UTC] Admin login attempt for email: admin@junglemart.in
+[08-Sep-2025 11:17:29 UTC] Admin login success for user ID: 3
+[08-Sep-2025 11:48:47 UTC] Admin login attempt for email: admin@junglemart.in
+[08-Sep-2025 11:48:47 UTC] Admin login success for user ID: 3
+[08-Sep-2025 11:56:28 UTC] Admin login attempt for email: admin@junglemart.in
+[08-Sep-2025 11:56:28 UTC] Admin login success for user ID: 3
+[08-Sep-2025 12:13:51 UTC] Admin login attempt for email: admin@junglemart.in
+[08-Sep-2025 12:13:52 UTC] Admin login success for user ID: 3
+[08-Sep-2025 12:13:55 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminincludes/db.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/add_product.php on line 3
+[08-Sep-2025 12:13:55 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminincludes/db.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/add_product.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/add_product.php on line 3
+[08-Sep-2025 12:31:24 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminincludes/db.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/add_product.php on line 3
+[08-Sep-2025 12:31:24 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminincludes/db.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/add_product.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/add_product.php on line 3
+[08-Sep-2025 12:32:35 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_header.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 4
+[08-Sep-2025 12:32:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_header.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 4
+[08-Sep-2025 12:33:00 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 12:33:00 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 12:44:25 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 12:44:25 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 12:45:26 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 12:45:26 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 12:45:30 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 12:45:30 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 12:45:33 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 12:45:33 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 12:45:36 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 12:45:36 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 12:45:38 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'o.customer_name' in 'SELECT' in /home/d7bsks9g02si/public_html/admin/orders.php:64
+Stack trace:
+#0 /home/d7bsks9g02si/public_html/admin/orders.php(64): PDO->prepare()
+#1 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/orders.php on line 64
+[08-Sep-2025 12:45:40 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 12:45:40 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 12:48:09 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 12:48:09 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 12:51:15 UTC] Admin login attempt for email: admin@junglemart.in
+[08-Sep-2025 12:51:15 UTC] Admin login success for user ID: 3
+[08-Sep-2025 12:51:15 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 12:51:15 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 12:51:15 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 12:51:15 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 12:55:37 UTC] Admin login attempt for email: admin@junglemart.in
+[08-Sep-2025 12:55:38 UTC] Admin login success for user ID: 3
+[08-Sep-2025 12:55:38 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 12:55:38 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 13:05:45 UTC] Admin login attempt for email: admin@junglemart.in
+[08-Sep-2025 13:05:45 UTC] Admin login success for user ID: 3
+[08-Sep-2025 13:05:45 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 13:05:45 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 13:05:46 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 13:05:46 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 17:38:54 UTC] Admin login attempt for email: admin@junglemart.in
+[08-Sep-2025 17:38:54 UTC] Admin login failed: password mismatch
+[08-Sep-2025 17:39:23 UTC] Admin login attempt for email: admin@junglemart.in
+[08-Sep-2025 17:39:23 UTC] Admin login success for user ID: 3
+[08-Sep-2025 17:39:23 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 17:39:23 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 17:40:29 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 17:40:29 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[08-Sep-2025 17:40:53 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'o.customer_name' in 'SELECT' in /home/d7bsks9g02si/public_html/admin/orders.php:64
+Stack trace:
+#0 /home/d7bsks9g02si/public_html/admin/orders.php(64): PDO->prepare()
+#1 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/orders.php on line 64
+[09-Sep-2025 05:37:06 UTC] Admin login attempt for email: admin@junglemart.in
+[09-Sep-2025 05:37:06 UTC] Admin login success for user ID: 3
+[09-Sep-2025 05:37:06 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[09-Sep-2025 05:37:06 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[09-Sep-2025 05:37:15 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'o.customer_name' in 'SELECT' in /home/d7bsks9g02si/public_html/admin/orders.php:64
+Stack trace:
+#0 /home/d7bsks9g02si/public_html/admin/orders.php(64): PDO->prepare()
+#1 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/orders.php on line 64
+[09-Sep-2025 05:37:17 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[09-Sep-2025 05:37:17 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[09-Sep-2025 06:07:35 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/admin/includes/db.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/product_toggle.php on line 3
+[09-Sep-2025 06:07:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/admin/includes/db.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/product_toggle.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/product_toggle.php on line 3
+[09-Sep-2025 06:07:44 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/admin/includes/db.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/product_toggle.php on line 3
+[09-Sep-2025 06:07:44 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/admin/includes/db.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/product_toggle.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/product_toggle.php on line 3
+[09-Sep-2025 06:11:03 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[09-Sep-2025 06:11:03 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[09-Sep-2025 06:11:34 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/admin/includes/db.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/product_toggle.php on line 3
+[09-Sep-2025 06:11:34 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/admin/includes/db.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/product_toggle.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/product_toggle.php on line 3
+[09-Sep-2025 07:24:49 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[09-Sep-2025 07:24:49 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[09-Sep-2025 07:41:24 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customer_name' in 'SELECT' in /home/d7bsks9g02si/public_html/admin/orders.php:55
+Stack trace:
+#0 /home/d7bsks9g02si/public_html/admin/orders.php(55): PDO->prepare()
+#1 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/orders.php on line 55
+[09-Sep-2025 07:43:03 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customer_name' in 'SELECT' in /home/d7bsks9g02si/public_html/admin/orders.php:55
+Stack trace:
+#0 /home/d7bsks9g02si/public_html/admin/orders.php(55): PDO->prepare()
+#1 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/orders.php on line 55
+[09-Sep-2025 07:46:01 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customer_name' in 'SELECT' in /home/d7bsks9g02si/public_html/admin/orders.php:65
+Stack trace:
+#0 /home/d7bsks9g02si/public_html/admin/orders.php(65): PDO->prepare()
+#1 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/orders.php on line 65
+[09-Sep-2025 07:47:23 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'o.customer_name' in 'SELECT' in /home/d7bsks9g02si/public_html/admin/orders.php:65
+Stack trace:
+#0 /home/d7bsks9g02si/public_html/admin/orders.php(65): PDO->prepare()
+#1 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/orders.php on line 65
+[09-Sep-2025 07:51:43 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'o.customer_name' in 'SELECT' in /home/d7bsks9g02si/public_html/admin/orders.php:65
+Stack trace:
+#0 /home/d7bsks9g02si/public_html/admin/orders.php(65): PDO->prepare()
+#1 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/orders.php on line 65
+[09-Sep-2025 07:57:11 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.name' in 'SELECT' in /home/d7bsks9g02si/public_html/admin/orders.php:66
+Stack trace:
+#0 /home/d7bsks9g02si/public_html/admin/orders.php(66): PDO->prepare()
+#1 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/orders.php on line 66
+[09-Sep-2025 07:59:56 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'q.status' in 'SELECT' in /home/d7bsks9g02si/public_html/admin/orders.php:66
+Stack trace:
+#0 /home/d7bsks9g02si/public_html/admin/orders.php(66): PDO->prepare()
+#1 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/orders.php on line 66
+[09-Sep-2025 07:59:59 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'q.status' in 'SELECT' in /home/d7bsks9g02si/public_html/admin/orders.php:66
+Stack trace:
+#0 /home/d7bsks9g02si/public_html/admin/orders.php(66): PDO->prepare()
+#1 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/orders.php on line 66
+[09-Sep-2025 08:00:55 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'q.updated_at' in 'SELECT' in /home/d7bsks9g02si/public_html/admin/orders.php:66
+Stack trace:
+#0 /home/d7bsks9g02si/public_html/admin/orders.php(66): PDO->prepare()
+#1 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/orders.php on line 66
+[09-Sep-2025 08:01:45 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'q.status' in 'SELECT' in /home/d7bsks9g02si/public_html/admin/orders.php:86
+Stack trace:
+#0 /home/d7bsks9g02si/public_html/admin/orders.php(86): PDO->prepare()
+#1 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/orders.php on line 86
+[09-Sep-2025 08:03:46 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'q.status' in 'SELECT' in /home/d7bsks9g02si/public_html/admin/orders.php:86
+Stack trace:
+#0 /home/d7bsks9g02si/public_html/admin/orders.php(86): PDO->prepare()
+#1 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/orders.php on line 86
+[09-Sep-2025 08:15:14 UTC] PHP Warning:  Undefined array key "order_number" in /home/d7bsks9g02si/public_html/admin/view_order.php on line 46
+[09-Sep-2025 08:17:13 UTC] PHP Warning:  Undefined array key "order_number" in /home/d7bsks9g02si/public_html/admin/view_order.php on line 51
+[09-Sep-2025 08:19:42 UTC] PHP Warning:  Undefined array key "order_number" in /home/d7bsks9g02si/public_html/admin/view_order.php on line 51
+[09-Sep-2025 08:19:47 UTC] PHP Warning:  Undefined array key "order_number" in /home/d7bsks9g02si/public_html/admin/view_order.php on line 51
+[09-Sep-2025 08:19:52 UTC] PHP Warning:  Undefined array key "order_number" in /home/d7bsks9g02si/public_html/admin/view_order.php on line 51
+[09-Sep-2025 08:21:55 UTC] PHP Warning:  Undefined array key "order_number" in /home/d7bsks9g02si/public_html/admin/view_order.php on line 51
+[09-Sep-2025 08:29:57 UTC] PHP Warning:  Undefined array key "order_number" in /home/d7bsks9g02si/public_html/admin/view_order.php on line 51
+[09-Sep-2025 08:36:12 UTC] Admin login attempt for email: admin@junglemart.in
+[09-Sep-2025 08:36:12 UTC] Admin login success for user ID: 3
+[09-Sep-2025 08:36:12 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[09-Sep-2025 08:36:12 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[09-Sep-2025 08:36:25 UTC] PHP Warning:  Undefined array key "order_number" in /home/d7bsks9g02si/public_html/admin/edit_order.php on line 79
+[09-Sep-2025 08:38:30 UTC] PHP Warning:  Undefined array key "order_number" in /home/d7bsks9g02si/public_html/admin/edit_order.php on line 79
+[09-Sep-2025 08:39:02 UTC] PHP Warning:  Undefined array key "order_number" in /home/d7bsks9g02si/public_html/admin/view_order.php on line 51
+[09-Sep-2025 08:39:43 UTC] PHP Warning:  Undefined array key "order_number" in /home/d7bsks9g02si/public_html/admin/edit_order.php on line 96
+[09-Sep-2025 08:40:27 UTC] PHP Warning:  Undefined array key "order_number" in /home/d7bsks9g02si/public_html/admin/edit_order.php on line 96
+[09-Sep-2025 08:40:29 UTC] PHP Warning:  Undefined array key "order_number" in /home/d7bsks9g02si/public_html/admin/edit_order.php on line 96
+[09-Sep-2025 08:40:55 UTC] PHP Warning:  Undefined array key "order_number" in /home/d7bsks9g02si/public_html/admin/edit_order.php on line 96
+[09-Sep-2025 08:53:53 UTC] PHP Warning:  Undefined array key "order_number" in /home/d7bsks9g02si/public_html/admin/edit_order.php on line 95
+[09-Sep-2025 08:54:56 UTC] PHP Warning:  Undefined array key "order_number" in /home/d7bsks9g02si/public_html/admin/edit_order.php on line 95
+[09-Sep-2025 08:55:00 UTC] PHP Warning:  Undefined array key "order_number" in /home/d7bsks9g02si/public_html/admin/edit_order.php on line 95
+[09-Sep-2025 08:55:27 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[09-Sep-2025 08:55:27 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[09-Sep-2025 09:38:25 UTC] Admin login attempt for email: admin@junglemart.in
+[09-Sep-2025 09:38:25 UTC] Admin login success for user ID: 3
+[09-Sep-2025 09:38:26 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[09-Sep-2025 09:38:26 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[10-Sep-2025 06:02:23 UTC] Admin login attempt for email: admin@junglemart.in
+[10-Sep-2025 06:02:23 UTC] Admin login failed: password mismatch
+[10-Sep-2025 06:02:45 UTC] Admin login attempt for email: admin@junglemart.in
+[10-Sep-2025 06:02:45 UTC] Admin login success for user ID: 3
+[10-Sep-2025 06:02:45 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[10-Sep-2025 06:02:45 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[10-Sep-2025 06:24:39 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[10-Sep-2025 06:24:39 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[10-Sep-2025 06:32:28 UTC] Admin login attempt for email: admin@junglemart.in
+[10-Sep-2025 06:32:28 UTC] Admin login success for user ID: 3
+[10-Sep-2025 06:32:28 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[10-Sep-2025 06:32:28 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[10-Sep-2025 06:35:49 UTC] Admin login attempt for email: admin@junglemart.in
+[10-Sep-2025 06:35:49 UTC] Admin login success for user ID: 3
+[10-Sep-2025 06:35:49 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[10-Sep-2025 06:35:49 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[10-Sep-2025 07:03:12 UTC] Admin login attempt for email: admin@junglemart.in
+[10-Sep-2025 07:03:12 UTC] Admin login success for user ID: 3
+[10-Sep-2025 07:03:12 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[10-Sep-2025 07:03:12 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[10-Sep-2025 12:46:14 UTC] Admin login attempt for email: admin@junglemart.in
+[10-Sep-2025 12:46:14 UTC] Admin login success for user ID: 3
+[10-Sep-2025 12:46:14 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[10-Sep-2025 12:46:14 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[11-Sep-2025 19:03:24 UTC] Admin login attempt for email: admin@junglemart.in
+[11-Sep-2025 19:03:24 UTC] Admin login success for user ID: 3
+[11-Sep-2025 19:03:24 UTC] PHP Warning:  require_once(/home/d7bsks9g02si/public_html/adminadmin_footer.php): Failed to open stream: No such file or directory in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274
+[11-Sep-2025 19:03:24 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/d7bsks9g02si/public_html/adminadmin_footer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php:274
+Stack trace:
+#0 {main}
+  thrown in /home/d7bsks9g02si/public_html/admin/admin_dashboard.php on line 274

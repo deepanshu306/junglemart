@@ -1,0 +1,100 @@
+# ============================================================
+# Canonical domain + HTTPS + WWW redirection
+# ============================================================
+RewriteEngine On
+RewriteBase /
+
+# Force HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Redirect www to non-www
+RewriteCond %{HTTP_HOST} ^www\.junglemart\.in$ [NC]
+RewriteRule ^(.*)$ https://junglemart.in/$1 [R=301,L]
+
+# ============================================================
+# Remove .php from URL (clean URLs)
+# ============================================================
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s(.*)\.php[\s?] [NC]
+RewriteRule ^(.*)\.php$ /$1 [R=301,L]
+
+# Internally rewrite clean URLs to actual .php files
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)/?$ $1.php [L]
+
+# Set index file
+DirectoryIndex index.php
+
+# ============================================================
+# Admin Panel Clean Routes (map clean URLs to files)
+# ============================================================
+RewriteRule ^admin/login/?$                admin/admin_login.php           [L,QSA]
+RewriteRule ^admin/dashboard/?$            admin/admin_dashboard.php       [L,QSA]
+RewriteRule ^admin/logout/?$               admin/logout.php                [L,QSA]
+RewriteRule ^admin/products/?$             admin/manage_products.php       [L,QSA]
+RewriteRule ^admin/products/add/?$         admin/add_product.php           [L,QSA]
+RewriteRule ^admin/products/edit/([0-9]+)/?$ admin/edit_product.php?id=$1   [L,QSA]
+RewriteRule ^admin/products/delete/([0-9]+)/?$ admin/delete_product.php?id=$1 [L,QSA]
+
+# ============================================================
+# Public Routes (clean)
+# ============================================================
+RewriteRule ^about/?$                      pages/about.php                 [L,QSA]
+RewriteRule ^contact/?$                    pages/contact.php               [L,QSA]
+RewriteRule ^categories/?$                 pages/categories.php            [L,QSA]
+RewriteRule ^cart/?$                       pages/cart.php                  [L,QSA]
+RewriteRule ^search/?$                     pages/search.php                [L,QSA]
+
+RewriteRule ^product/([0-9]+)/?$           pages/product.php?id=$1         [L,QSA]
+RewriteRule ^product/([A-Za-z0-9\-]+)/?$   pages/product.php?slug=$1       [L,QSA]
+
+RewriteRule ^cart/add/?$                   pages/cart_add.php              [L,QSA]
+RewriteRule ^cart/remove/?$                pages/cart_remove.php           [L,QSA]
+RewriteRule ^send-contact/?$               pages/send_contact.php          [L,QSA]
+RewriteRule ^send-quotation/?$             pages/send_quotation.php        [L,QSA]
+
+# ============================================================
+# 404 fallback if no file matches
+# ============================================================
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ pages/404.php [L]
+
+# ============================================================
+# Security (block config and dotfiles)
+# ============================================================
+ServerSignature Off
+Options -Indexes
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+<FilesMatch "(config\.php|composer\.(json|lock))">
+  Require all denied
+</FilesMatch>
+
+# ============================================================
+# Optional: Basic Bad Bot Protection
+# ============================================================
+BrowserMatchNoCase "AhrefsBot" bad_bot
+BrowserMatchNoCase "SemrushBot" bad_bot
+BrowserMatchNoCase "MJ12bot" bad_bot
+BrowserMatchNoCase "DotBot" bad_bot
+Order Allow,Deny
+Allow from all
+Deny from env=bad_bot
+
+# ============================================================
+# Optional: Caching + Compression (SEO boost)
+# ============================================================
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json image/svg+xml
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png  "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType text/css   "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+</IfModule>

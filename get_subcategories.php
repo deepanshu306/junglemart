@@ -1,5 +1,5 @@
 <?php
-require_once 'db.php';
+require_once 'includes/db.php';
 
 // Get all subcategories
 $subcategories = $pdo->query("SELECT id, name FROM categories WHERE parent_id IS NOT NULL ORDER BY name")->fetchAll();
@@ -14,7 +14,7 @@ foreach ($subcategories as $subcat) {
     // Create the subcategory page
     $content = '<?php
 session_start();
-require_once \'db.php\';
+require_once \'../includes/db.php\';
 
 $subcategoryId = ' . $subcat['id'] . ';
 $subcategoryName = "' . addslashes($subcat['name']) . '";
@@ -26,7 +26,7 @@ $products = $products->fetchAll();
 
 // Helper function for images
 function first_image($jsonImages) {
-    $fallback = \'images/placeholder.png\';
+    $fallback = \'../images/placeholder.png\';
     if (empty($jsonImages)) return $fallback;
     $arr = json_decode($jsonImages, true);
     if (is_array($arr) && count($arr) > 0) return htmlspecialchars($arr[0]);
@@ -39,14 +39,14 @@ function first_image($jsonImages) {
   <meta charset="UTF-8">
   <title><?php echo htmlspecialchars($subcategoryName); ?> - Jungle Mart</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/navbar.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <script defer src="js/script.js"></script>
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <script defer src="../js/script.js"></script>
 </head>
 <body>
 
-<?php include \'navbar.php\'; ?>
+<?php include \'../partials/navbar.php\'; ?>
 
 <div class="container fade-in">
   <h1><?php echo htmlspecialchars($subcategoryName); ?></h1>
@@ -81,7 +81,7 @@ function first_image($jsonImages) {
   <?php endif; ?>
 </div>
 
-<?php include \'footer.php\'; ?>
+<?php include \'../partials/footer.php\'; ?>
 
 </body>
 </html>';

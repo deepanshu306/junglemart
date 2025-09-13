@@ -17,6 +17,28 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // ===============================
+// Animated Garden Hero Cursor Parallax
+// ===============================
+
+document.addEventListener('DOMContentLoaded', function() {
+  const hero = document.getElementById('hero');
+  if (!hero) return;
+  const img = hero.querySelector('.hero-img');
+  if (!img) return;
+
+  hero.addEventListener('mousemove', (event) => {
+    const rect = hero.getBoundingClientRect();
+    const xRatio = (event.clientX - rect.left) / rect.width;
+    const yRatio = (event.clientY - rect.top) / rect.height;
+
+    const offsetX = (xRatio - 0.5) * 20;
+    const offsetY = (yRatio - 0.5) * 20;
+
+    img.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+  });
+});
+
+// ===============================
 // Premium Animation Initialization
 // ===============================
 
@@ -108,23 +130,47 @@ function initGSAPAnimations() {
     delay: 1
   });
 
-  // Category cards animation - Disabled to prevent disappearing effect
+  // Category cards animation with optimized settings
+  gsap.from('.cat-card', {
+    duration: 0.6,
+    y: 20,
+    opacity: 0,
+    stagger: 0.08,
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '.categories-strip',
+      start: 'top 85%',
+      toggleActions: 'play none none reverse'
+    }
+  });
 
-  // Product cards animation
+  // Product cards animation with anti-flickering measures
   gsap.from('.product-card', {
-    duration: 0.8,
+    duration: 0.6,
+    y: 25,
+    opacity: 0,
+    stagger: 0.05,
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '.section',
+      start: 'top 85%',
+      toggleActions: 'play none none reverse'
+    }
+  });
+
+  // Trust section animation
+  gsap.from('.trust-item', {
+    duration: 0.7,
     y: 30,
     opacity: 0,
     stagger: 0.1,
     ease: 'power2.out',
     scrollTrigger: {
-      trigger: '.section',
+      trigger: '.trust-section',
       start: 'top 80%',
       toggleActions: 'play none none reverse'
     }
   });
-
-  // Trust section animation - Disabled to prevent disappearing effect
 
   // CTA section animation
   gsap.from('.cta-inner > div', {
@@ -146,29 +192,38 @@ function initGSAPAnimations() {
 // ===============================
 
 function initLottieAnimations() {
-  // Initialize Lottie animations for trust icons
+  // Lazy load Lottie animations for trust icons when visible
   const trustIcons = document.querySelectorAll('.trust-lottie');
   
-  trustIcons.forEach(icon => {
-    const animationPath = icon.getAttribute('data-lottie');
-    if (animationPath) {
-      lottie.loadAnimation({
-        container: icon,
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: animationPath
-      });
-    }
-  });
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const icon = entry.target;
+        const animationPath = icon.getAttribute('data-lottie');
+        if (animationPath) {
+          lottie.loadAnimation({
+            container: icon,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: animationPath
+          });
+          obs.unobserve(icon);
+        }
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  trustIcons.forEach(icon => observer.observe(icon));
 
-  // Add Lottie animations to buttons
+  // Add Lottie animations to buttons with deferred initialization
   const primaryButtons = document.querySelectorAll('.btn.primary');
   
   primaryButtons.forEach(button => {
+    let hoverAnimation;
     button.addEventListener('mouseenter', () => {
-      // Add subtle scale animation on hover
-      gsap.to(button, {
+      if (hoverAnimation) hoverAnimation.kill();
+      hoverAnimation = gsap.to(button, {
         duration: 0.3,
         scale: 1.05,
         ease: 'power2.out'
@@ -176,7 +231,8 @@ function initLottieAnimations() {
     });
 
     button.addEventListener('mouseleave', () => {
-      gsap.to(button, {
+      if (hoverAnimation) hoverAnimation.kill();
+      hoverAnimation = gsap.to(button, {
         duration: 0.3,
         scale: 1,
         ease: 'power2.out'
@@ -213,8 +269,7 @@ function initMobileNavigation() {
   // Close mobile menu when clicking outside
   document.addEventListener('click', (e) => {
     if (navLinks && navLinks.classList.contains('show') && 
-        !navToggle.contains(e.target) && 
-        !navLinks.contains(e.target)) {
+        !navToggle.contains(e.target) && !navLinks.contains(e.target)) {
       navLinks.classList.remove('show');
     }
   });
@@ -254,7 +309,7 @@ function initSmoothScrolling() {
 
 function initLazyLoading() {
   const lazyImages = document.querySelectorAll('img[data-src]');
-  
+
   const imageObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -267,6 +322,21 @@ function initLazyLoading() {
   });
 
   lazyImages.forEach(img => imageObserver.observe(img));
+
+  // Prevent flicker by adding loaded class to images when they finish loading
+  const allImages = document.querySelectorAll('img');
+  allImages.forEach(img => {
+    if (img.complete) {
+      img.classList.add('loaded');
+    } else {
+      img.addEventListener('load', () => {
+        img.classList.add('loaded');
+      });
+      img.addEventListener('error', () => {
+        img.classList.add('loaded'); // Add loaded class even on error to prevent permanent opacity: 0
+      });
+    }
+  });
 }
 
 // ===============================
@@ -344,10 +414,76 @@ function initCartAnimations() {
       localStorage.setItem(CART_KEY, JSON.stringify(cart));
       updateCartCount();
       
-      // Show success notification
-      showNotification('Added to Quotation Cart!', 'success');
+  // Show success notification
+  showNotification('Added to Quotation Cart!', 'success');
     }
   });
+
+  // Voice recognition for search bar
+  const voiceBtn = document.getElementById('voiceSearchBtn');
+  const searchInput = document.getElementById('searchInput');
+  const imageBtn = document.getElementById('imageSearchBtn');
+  const imageInput = document.getElementById('imageSearchInput');
+
+  if (voiceBtn && searchInput) {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      voiceBtn.style.display = 'none';
+    } else {
+      const recognition = new SpeechRecognition();
+      recognition.lang = 'en-US';
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      voiceBtn.addEventListener('click', () => {
+        recognition.start();
+        voiceBtn.disabled = true;
+        voiceBtn.title = 'Listening... Click again to stop.';
+      });
+
+      recognition.addEventListener('result', (event) => {
+        const transcript = event.results[0][0].transcript;
+        searchInput.value = transcript;
+        // Automatically submit the search form after voice input
+        const searchForm = document.getElementById('navSearchForm');
+        if (searchForm) {
+          searchForm.submit();
+        }
+      });
+
+      recognition.addEventListener('end', () => {
+        voiceBtn.disabled = false;
+        voiceBtn.title = 'Voice Search';
+      });
+
+      recognition.addEventListener('error', (event) => {
+        console.error('Speech recognition error:', event.error);
+        voiceBtn.disabled = false;
+        voiceBtn.title = 'Voice Search';
+      });
+    }
+  }
+  
+  if (imageBtn && imageInput) {
+    imageBtn.addEventListener('click', () => {
+      imageInput.click();
+    });
+
+    imageInput.addEventListener('change', () => {
+      const file = imageInput.files[0];
+      if (!file) return;
+
+      // For now, just alert the user and clear the input
+      alert('Image search is not yet implemented. Selected file: ' + file.name);
+      imageInput.value = '';
+
+      // Automatically submit the search form after image selection (placeholder)
+      const searchForm = document.getElementById('navSearchForm');
+      if (searchForm) {
+        searchForm.submit();
+      }
+    });
+  }
 }
 
 // ===============================
@@ -398,23 +534,28 @@ function initScrollReveal() {
 // ===============================
 
 function initPageTransitions() {
-  const links = document.querySelectorAll('a:not([target="_blank"])');
+  // Disabled page transition animation to test navigation issues
+  // const links = document.querySelectorAll('a:not([target="_blank"])');
   
-  links.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetUrl = link.getAttribute('href');
+  // links.forEach(link => {
+  //   link.addEventListener('click', (e) => {
+  //     const targetUrl = link.getAttribute('href');
+  //     if (!targetUrl || targetUrl.trim() === '' || targetUrl.startsWith('#')) {
+  //       // Allow default behavior for empty or anchor links
+  //       return;
+  //     }
+  //     e.preventDefault();
       
-      // Add page transition animation
-      gsap.to(document.body, {
-        duration: 0.5,
-        opacity: 0,
-        onComplete: () => {
-          window.location.href = targetUrl;
-        }
-      });
-    });
-  });
+  //     // Add page transition animation
+  //     gsap.to(document.body, {
+  //       duration = 0.5,
+  //       opacity = 0,
+  //       onComplete: () => {
+  //         window.location.href = targetUrl;
+  //       }
+  //     });
+  //   });
+  // });
 }
 
 // ===============================
@@ -429,6 +570,43 @@ function updateCartCount() {
   const el = document.getElementById("cartCount");
   if (el) el.textContent = count;
 }
+
+// ===============================
+// Flash Sale Countdown Timer
+// ===============================
+
+function startFlashSaleCountdown(durationSeconds) {
+  const countdownEl = document.getElementById('flashSaleCountdown');
+  if (!countdownEl) return;
+
+  let remaining = durationSeconds;
+
+  function updateCountdown() {
+    if (remaining < 0) {
+      countdownEl.textContent = "00:00:00";
+      clearInterval(intervalId);
+      return;
+    }
+    const hours = Math.floor(remaining / 3600);
+    const minutes = Math.floor((remaining % 3600) / 60);
+    const seconds = remaining % 60;
+
+    countdownEl.textContent = 
+      String(hours).padStart(2, '0') + ':' + 
+      String(minutes).padStart(2, '0') + ':' + 
+      String(seconds).padStart(2, '0');
+
+    remaining--;
+  }
+
+  updateCountdown();
+  const intervalId = setInterval(updateCountdown, 1000);
+}
+
+// Start countdown for 24 hours (86400 seconds) on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+  startFlashSaleCountdown(86400);
+});
 
 // ===============================
 // Show Notification
